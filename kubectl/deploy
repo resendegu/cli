@@ -4,9 +4,9 @@ set -e
 rm -f tsconfig.json package.json
 npx tsc --init --target es2018 --lib es2018 --strict false --noImplicitAny false > /dev/null
 
-mkdir -p node_modules/@cubos
-rm -rf node_modules/@cubos/kube-templates
-ln -s /usr/local/lib/node_modules/@cubos/kube-templates node_modules/@cubos/kube-templates
+mkdir -p node_modules/@resendegu
+rm -rf node_modules/@resendegu/kube-templates
+ln -s /usr/local/lib/node_modules/@resendegu/kube-templates node_modules/@resendegu/kube-templates
 
 mkdir -p node_modules/@types
 rm -rf node_modules/@types/node
