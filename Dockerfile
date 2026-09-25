@@ -66,7 +66,7 @@ RUN npm i -g --no-fund --no-audit \
     ejs-cli \
     firebase-tools \
     ts-node \
-    typescript \
+    typescript@~5 \
     @resendegu/kube-templates \
     @types/node@~24 && \
     npm cache clean --force && \
