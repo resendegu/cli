@@ -46,8 +46,8 @@ COPY --from=alpine/helm:3.17.1 /usr/bin/helm /usr/local/bin/helm
 # - Streaming via curl | tar direto (sem gravar tar.gz temporário de 150MB no disco)
 # - Limpeza profunda: remoção de .backup, testes, __pycache__, arquivos .pyc e telemetria
 RUN case "${TARGETARCH}" in \
-      "arm64") GCLOUD_ARCH="arm" ;; \
-      *) GCLOUD_ARCH="x86_64" ;; \
+    "arm64") GCLOUD_ARCH="arm" ;; \
+    *) GCLOUD_ARCH="x86_64" ;; \
     esac && \
     curl -fsSL "https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-${GCLOUD_ARCH}.tar.gz" | tar -xz -C / && \
     /google-cloud-sdk/install.sh --additional-components kubectl --path-update true --usage-reporting false --quiet && \
@@ -67,7 +67,7 @@ RUN npm i -g --no-fund --no-audit \
     firebase-tools \
     ts-node \
     typescript@~5 \
-    @resendegu/kube-templates \
+    @resendegu/kube-templates@1.1.0 \
     @types/node@~24 && \
     npm cache clean --force && \
     rm -rf /root/.npm /root/.cache /tmp/* && \
