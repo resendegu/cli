@@ -32,9 +32,10 @@ RUN apk add --no-cache \
     py3-cffi \
     py3-cryptography \
     py3-pip \
-    py3-yq \
+    py3-yaml \
     python3 \
-    s3cmd
+    s3cmd && \
+    pip install --no-cache-dir --break-system-packages yq
 
 # 2. Binários multi-stage (rápidos, imutáveis e multi-arch)
 COPY --from=composer:2.6 /usr/bin/composer /usr/local/bin/composer
